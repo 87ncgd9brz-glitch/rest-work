@@ -139,10 +139,99 @@
             text-align: center;
             color: white;
             margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flames-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .flame {
+            position: absolute;
+            bottom: -20px;
+            width: 60px;
+            height: 120px;
+            background: linear-gradient(to top, 
+                #FFD700 0%, 
+                #FFA500 30%, 
+                #FF4500 60%, 
+                transparent 100%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flicker 2s ease-in-out infinite;
+            opacity: 0.8;
+            filter: blur(2px);
+        }
+
+        .flame-1 {
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 2.5s;
+        }
+
+        .flame-2 {
+            left: 25%;
+            animation-delay: 0.5s;
+            animation-duration: 2s;
+            height: 100px;
+        }
+
+        .flame-3 {
+            left: 45%;
+            animation-delay: 1s;
+            animation-duration: 2.8s;
+            height: 140px;
+        }
+
+        .flame-4 {
+            left: 60%;
+            animation-delay: 0.3s;
+            animation-duration: 2.3s;
+            height: 110px;
+        }
+
+        .flame-5 {
+            left: 75%;
+            animation-delay: 0.8s;
+            animation-duration: 2.6s;
+        }
+
+        .flame-6 {
+            left: 90%;
+            animation-delay: 1.2s;
+            animation-duration: 2.2s;
+            height: 95px;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                transform: translateY(0) scaleY(1);
+                opacity: 0.8;
+            }
+            25% {
+                transform: translateY(-15px) scaleY(1.1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translateY(-5px) scaleY(0.95);
+                opacity: 0.7;
+            }
+            75% {
+                transform: translateY(-20px) scaleY(1.15);
+                opacity: 0.85;
+            }
         }
 
         .hero-content {
             animation: fadeIn 1.5s ease-in;
+            position: relative;
+            z-index: 2;
         }
 
         @keyframes fadeIn {
@@ -436,6 +525,14 @@
     </header>
 
     <section id="home" class="hero">
+        <div class="flames-container">
+            <div class="flame flame-1"></div>
+            <div class="flame flame-2"></div>
+            <div class="flame flame-3"></div>
+            <div class="flame flame-4"></div>
+            <div class="flame flame-5"></div>
+            <div class="flame flame-6"></div>
+        </div>
         <div class="hero-content">
             <h1>PHAKAtwayo Culinary Solutions</h1>
             <p>Experience Authentic African Flavors</p>
@@ -448,8 +545,7 @@
         <div class="about-content">
             <div class="about-text">
                 <p>Welcome to PHAKAtwayo Culinary Solutions, where tradition meets innovation. Our passion is bringing the rich, vibrant flavors of African cuisine to your table.</p>
-                <p>Each dish is crafted with authentic spices and traditional cooking methods passed down through generations, combined with contemporary culinary techniques.</p>
-                <p>We believe food is more than sustenance—it's a celebration of culture, community, and connection.</p>
+                <p>Phaka Twayo Culinary solutions is a culinary group founded by chef Mabaya also known as Chef Cook. This culinary group aims to provide hospitality especially culinary related services and solutions. The group company will run several american style fast food cafes, private and family cheffing services, catering for small and intimate events, menu planning and consultation services for start up restaurants, cafes and fast food restaurants. Basic Culinary training services will also be available for start up restaurants. Through the upcoming years we aim to grow to be Africas leading culinary solutions and hospitality group.</p>
             </div>
             <div class="about-image">
                 <img src="logo.png" alt="PHAKAtwayo Culinary Solutions Logo">
@@ -490,7 +586,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 PHAKAtwayo Culinary Solutions. All rights reserved.</p>
+        <p>&copy; 2024 PHAKAtwayo Culinary Solutions. All rights reserved.</p>
     </footer>
 
     <script>
